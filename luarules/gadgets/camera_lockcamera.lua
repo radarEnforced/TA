@@ -103,13 +103,13 @@ else
 		local floatChars = vfsPackF32(num)
 		if not floatChars then return nil end
 
-		local _ = 0
+		local sign = 0
 		local exponent = strByte(floatChars, 4) * 2
 		local mantissa = strByte(floatChars, 3) * 2
 
 		local negative = exponent >= 256
 		local exponentLSB = mantissa >= 256
-		local _ = strByte(floatChars, 2) >= 128
+		local mantissaLSB = strByte(floatChars, 2) >= 128
 
 		if negative then
 			sign = 128
@@ -157,10 +157,10 @@ else
 
 		if not (byte1 and byte2) then return nil end
 
-		local _ = 1
+		local sign = 1
 		local exponent = byte1
-		local _ = byte2 - 1
-		local _ = 1
+		local mantissa = byte2 - 1
+		local norm = 1
 
 		local negative = (byte1 >= 128)
 
