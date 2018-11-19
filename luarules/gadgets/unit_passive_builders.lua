@@ -224,7 +224,7 @@ function GetUpdateInterval(teamID)
     return maxInterval
 end
 
-function UpdatePassiveBuilders(teamID, _)
+function UpdatePassiveBuilders(teamID, interval)
     --calculate how much expense each passive con would require, and how much total expense the non-passive cons require
     local nonPassiveConsTotalExpense = {}
     local passiveConsExpense = {}
