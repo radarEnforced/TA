@@ -456,7 +456,7 @@ end
 
 local registeredBuilders = {}
 
-function gadget:UnitFinished(uid, _)
+function gadget:UnitFinished(uid, udid)
     if currentNanoEffect == NanoFxNone then return end
 	if (UnitDefs[udid].isBuilder) and not registeredBuilders[uid] then
 		BuilderFinished(uid)
