@@ -252,7 +252,7 @@ else
 			end
 		end
 		for _,playerID in ipairs(GetPlayerList()) do -- update player infos
-			local _,active,spectator, _, _,ping = GetPlayerInfo(playerID)
+			local _,active,spectator,teamID, _,ping = GetPlayerInfo(playerID)
 			local playerInfoTableEntry = playerInfoTable[playerID] or {}
 			playerInfoTableEntry.connected = active
 			playerInfoTableEntry.player = not spectator
